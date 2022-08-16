@@ -1,10 +1,12 @@
-import './App.css';
 import React from 'react';
+import Header from './Header'
+import PostControl from './PostControl';
 
-function App() {
+function App(){
   return (
     <React.Fragment>
       <Header />
+      <PostControl />
     </React.Fragment>
   );
 }

@@ -1,8 +1,12 @@
 import React from "react";
+import cryptImage from "./../img/cryptForum.png";
 
 function Header(){
   return (
-    <h1>Discussion Forum</h1>
+    <React.Fragment>
+      <h1>Discussion Forum</h1>
+      <img src={cryptImage} alt="tales from the crypt" />
+    </React.Fragment>
   );
 }
 
