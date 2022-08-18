@@ -11,6 +11,7 @@ function NewPostForm(props){
       author: event.target.author.value,
       subject: event.target.subject.value,
       issue: event.target.issue.value,
+      count: 0,
       id: v4()
     });
   }

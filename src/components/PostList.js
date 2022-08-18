@@ -13,6 +13,7 @@ function PostList(props){
           author={post.author}
           subject={post.subject}
           issue={post.issue}
+          count={post.count}
           id={post.id}
           key={post.id} />
         )}

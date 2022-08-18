@@ -73,6 +73,68 @@ class PostControl extends React.Component {
     });
   }
 
+
+  handleDownVote = (id) =>{
+    const selectedPost = this.state.mainPostList
+      .filter((post)=> post.id === id )[0];
+      const startingCount = selectedPost.count
+      if (selectedPost.count < startingCount -1){
+        alert("already downvoted!");
+      } else {
+      selectedPost.count -=1;
+      const updatedMainPostList = this.state.mainPostList
+      .filter((post)=> post.id !== id)
+      .concat(selectedPost);
+      this.setState({
+      mainPostList: updatedMainPostList
+    });
+  }
+    }
+
+
+    // if (selectedPost.count > 0) {
+    //   selectedPost.count -=1
+    // }
+    // const updatedMainPostList = this.state.mainPostList
+    //   .filter((post)=> post.id !== id)
+    //   .concat(selectedPost);
+    // this.setState({
+    //   mainPostList: updatedMainPostList
+    // });
+
+
+  handleUpVote = (id) => {
+    const selectedPost = this.state.mainPostList
+      .filter((post)=> post.id === id )[0];
+    if (selectedPost.count < 0) {
+      selectedPost.count +=1
+    }
+    const updatedMainPostList = this.state.mainPostList
+      .filter((post)=> post.id !== id)
+      .concat(selectedPost);
+    this.setState({
+      mainPostList: updatedMainPostList
+    });
+  }
+
+  // upVote += 1     
+  //              >>>>   toggle upVote >= downVote
+  // downVote += 1 
+
+  // handleBuyingTea = (id) => {
+  //   const buyTea = this.state.mainTeaList.filter(tea => tea.id === id)[0];
+  //   if (buyTea.quantity > 0) {
+  //     buyTea.quantity -= 1
+  //   }
+  //   const editedMainTeaList = this.state.mainTeaList
+  //     .filter(tea => tea.id !== this.state.selectedTea.id)
+  //     .concat(buyTea);
+  //   this.setState({
+  //     mainTeaList: editedMainTeaList,
+  //     selectedTea: null
+  //   });
+  // }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -88,7 +150,9 @@ class PostControl extends React.Component {
       <PostDetail 
         post={this.state.selectedPost}
         onClickingDelete = {this.handleDeletingPost} 
-        onClickingEdit ={this.handleEditClick}/>
+        onClickingEdit ={this.handleEditClick}
+        onDownVote = {this.handleDownVote}
+        onUpVote = {this.handleUpVote}/>
         buttonText = 'Return to Post List';
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 

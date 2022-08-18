@@ -18,6 +18,7 @@ Post.propTypes = {
   author: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
   issue: PropTypes.string.isRequired,
+  count: PropTypes.number,
   id: PropTypes.string,
   whenPropClicked: PropTypes.func
 };
