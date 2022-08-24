@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PostDetail(props){
-  const { post, onClickingDelete, onDownVote, onUpVote } = props;
+  const { post, onClickingDelete, onClickingEdit, onDownVote, onUpVote } = props;
 
   return (
     <React.Fragment>

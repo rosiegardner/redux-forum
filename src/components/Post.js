@@ -8,6 +8,7 @@ function Post(props) {
         <h3>{props.subject}</h3>
         <h3>By: {props.author}</h3>
         <p><em>{props.issue}</em></p>
+        <p><b>Rating:</b> {props.count}</p>
         <hr/>
       </div>
     </React.Fragment>

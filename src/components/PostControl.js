@@ -77,10 +77,6 @@ class PostControl extends React.Component {
   handleDownVote = (id) =>{
     const selectedPost = this.state.mainPostList
       .filter((post)=> post.id === id )[0];
-      const startingCount = selectedPost.count
-      if (selectedPost.count < startingCount -1){
-        alert("already downvoted!");
-      } else {
       selectedPost.count -=1;
       const updatedMainPostList = this.state.mainPostList
       .filter((post)=> post.id !== id)
@@ -89,7 +85,6 @@ class PostControl extends React.Component {
       mainPostList: updatedMainPostList
     });
   }
-    }
 
 
     // if (selectedPost.count > 0) {
@@ -106,9 +101,7 @@ class PostControl extends React.Component {
   handleUpVote = (id) => {
     const selectedPost = this.state.mainPostList
       .filter((post)=> post.id === id )[0];
-    if (selectedPost.count < 0) {
       selectedPost.count +=1
-    }
     const updatedMainPostList = this.state.mainPostList
       .filter((post)=> post.id !== id)
       .concat(selectedPost);

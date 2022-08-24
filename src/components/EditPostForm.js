@@ -11,6 +11,7 @@ function EditPostForm(props) {
       author: event.target.author.value,
       subject: event.target.subject.value,
       issue: event.target.issue.value,
+      count: post.count,
       id: post.id
     });
   }
